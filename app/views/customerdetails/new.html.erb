@@ -1,0 +1,44 @@
+<h1>顧客登録ページ</h1>
+<!-- form_with部分 -->
+<%= form_with model: @customerdetail do |f| %>
+<h4>お客様名　姓</h4>
+<%= f.text_field :last_name %>
+<h4>お客様名　名</h4>
+<%= f.text_field :first_name %>
+<h4>性別</h4>
+<%= f.text_field :gender %>
+<h4>来店日</h4>
+<%= f.text_field :visits %>
+<h4>ご利用額</h4>
+追記
+<h4>電話番号</h4>
+<%= f.text_field :phone_number %>
+<h4>メールアドレス</h4>
+<%= f.text_field :email %>
+<h4>郵便番号</h4>
+<%= f.text_field :post_code %>
+<h4>住所</h4>
+<%= f.text_field :address %>
+<h4>職業</h4>
+<%= f.text_field :profession %>
+<h4>年収</h4>
+<%= f.text_field :annual_income %>
+<h4>次回リピート見込み</h4>
+<%= f.text_field :repeat %>
+<h4>結婚の有無</h4>
+<%= f.text_field :marriage %>
+<h4>子供の有無</h4>
+<%= f.text_field :children %>
+
+<h1>目標</h1>
+<h4>来店頻度</h4>
+追記
+<h4>単価</h4>
+<%= f.text_field :unit_price %>
+<h4>1か月の売り上げ目標</h4>
+追記
+<h4>最終売上金額目標</h4>
+追記
+
+<%= f.submit '投稿' %>
+<% end %>
