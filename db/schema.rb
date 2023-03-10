@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 2023_03_07_093712) do
     t.string "unit_price"
     t.string "phone_number"
     t.string "email"
+    t.date "birthday"
+    t.string "visit_frequency"
+    t.string "month_sales_target"
+    t.string "gole_sales_target"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

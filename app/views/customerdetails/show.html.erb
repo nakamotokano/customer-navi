@@ -1,0 +1,83 @@
+
+<div class="container">
+    <div class="row">
+
+<h2><%= @customerdetail.first_name %><%= @customerdetail.last_name %>様の詳細ページ</h2>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th scope="row">名前</th>
+      <td><%= @customerdetail.first_name %><%= @customerdetail.last_name %></td>
+    </tr>
+    <tr>
+      <th scope="row">性別</th>
+      <td><%= @customerdetail.gender %></td>
+    </tr>
+      <tr>
+      <th scope="row">誕生日</th>
+      <td></td>
+    </tr>
+     <tr>
+      <th scope="row">来店日</th>
+      <td><%= @customerdetail.visits %></td>
+    </tr>
+      <tr>
+      <th scope="row">ご利用額</th>
+      <td><%= @customerdetail.unit_price %></td>
+    </tr>
+     <tr>
+      <th scope="row">職業</th>
+      <td><%= @customerdetail.profession %></td>
+    </tr>
+      <tr>
+      <th scope="row">年収</th>
+      <td><%= @customerdetail.annual_income %></td>
+    </tr>
+  　<tr>
+      <th scope="row">リピート見込み</th>
+      <td><%= @customerdetail.repeat %></td>
+    </tr>
+    <tr>
+      <th scope="row">郵便番号</th>
+      <td><%= @customerdetail.post_code %></td>
+    </tr>
+    <tr>
+      <th scope="row">住所</th>
+      <td><%= @customerdetail.address %></td>
+    </tr>
+    <tr>
+      <th scope="row">結婚の有無</th>
+      <td><%= @customerdetail.marriage %></td>
+    </tr>
+    <tr>
+      <th scope="row">子供の有無</th>
+      <td><%= @customerdetail.children %></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>目標</h2>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th scope="row">来店頻度</th>
+      <td>追記</td>
+    </tr>
+        <tr>
+      <th scope="row">来店頻度</th>
+      <td>追記</td>
+    </tr>
+    <tr>
+      <th scope="row">1か月の売り上げ目標</th>
+      <td>追記</td>
+    </tr>
+    <tr>
+      <th scope="row">最終売上金額目標</th>
+      <td>追記</td>
+    </tr>
+    
+    </tbody>
+</table>
+</div>
+</div>

@@ -17,6 +17,10 @@ t.string :visits
 t.string :unit_price
 t.string :phone_number
 t.string :email
+t.date :birthday
+t.string :visit_frequency
+t.string :month_sales_target
+t.string :gole_sales_target
       t.timestamps
     end
   end
