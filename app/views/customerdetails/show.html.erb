@@ -3,6 +3,14 @@
     <div class="row">
 
 <h2><%= @customerdetail.first_name %><%= @customerdetail.last_name %>様の詳細ページ</h2>
+<% if @customerdetail.errors.any? %>
+  <%= @customerdetail.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @customerdetail.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <table class="table table-bordered">
   <tbody>
     <tr>
@@ -15,7 +23,7 @@
     </tr>
       <tr>
       <th scope="row">誕生日</th>
-      <td></td>
+      <td><%= @customerdetail.birthday %></td>
     </tr>
      <tr>
       <th scope="row">来店日</th>
@@ -24,6 +32,22 @@
       <tr>
       <th scope="row">ご利用額</th>
       <td><%= @customerdetail.unit_price %></td>
+    </tr>
+     <tr>
+      <th scope="row">電話番号</th>
+      <td><%= @customerdetail.phone_number %></td>
+    </tr>
+    <tr>
+      <th scope="row">メールアドレス</th>
+      <td><%= @customerdetail.email %></td>
+    </tr>
+      <tr>
+      <th scope="row">郵便番号</th>
+      <td><%= @customerdetail.post_code %></td>
+    </tr>
+       <tr>
+      <th scope="row">住所</th>
+      <td><%= @customerdetail.address %></td>
     </tr>
      <tr>
       <th scope="row">職業</th>
@@ -36,10 +60,6 @@
   　<tr>
       <th scope="row">リピート見込み</th>
       <td><%= @customerdetail.repeat %></td>
-    </tr>
-    <tr>
-      <th scope="row">郵便番号</th>
-      <td><%= @customerdetail.post_code %></td>
     </tr>
     <tr>
       <th scope="row">住所</th>
@@ -62,22 +82,29 @@
   <tbody>
     <tr>
       <th scope="row">来店頻度</th>
-      <td>追記</td>
+      <td><%= @customerdetail.visit_frequency %></td>
     </tr>
         <tr>
-      <th scope="row">来店頻度</th>
-      <td>追記</td>
+      <th scope="row">単価</th>
+      <td><%= @customerdetail.unit_price %></td>
     </tr>
     <tr>
       <th scope="row">1か月の売り上げ目標</th>
-      <td>追記</td>
+      <td><%= @customerdetail.month_sales_target %></td>
     </tr>
     <tr>
       <th scope="row">最終売上金額目標</th>
-      <td>追記</td>
+      <td><%= @customerdetail.gole_sales_target %></td>
     </tr>
     
     </tbody>
 </table>
 </div>
 </div>
+
+<p>
+<%= link_to "編集", edit_customerdetail_path(@customerdetail.id) %>
+</p>
+<p>
+<%= link_to "新規登録", customerdetails_new_path(@customerdetail.id) %>
+</p>

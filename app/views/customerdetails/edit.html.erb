@@ -1,0 +1,128 @@
+<div class="container">
+<h1>顧客編集ページ</h1>
+
+<!-- form_with部分 -->
+<%= form_with model: @customerdetail, url:update_customerdetail_path(@customerdetail.id), method: :patch do |f| %>
+<table>
+<tr>
+<th>姓</th>
+<td>
+<%= f.text_field :last_name %>
+</td>
+<th>名</th>
+<td>
+<%= f.text_field :first_name %>
+</td>
+</tr>
+<th>性別</th>
+<td>
+  <%= f.select :gender, [["女", "女"], ["男", "男"], ["その他", "その他"] ], include_blank: "選択して下さい" %>
+
+</td>
+<tr>
+<th>来店日</th>
+<td>
+<%= f.text_field :visits %>
+</td>
+</tr>
+<th>誕生日</th>
+<td>
+<%= f.text_field :birthday %>
+</td>
+</tr>
+<tr>
+<th>ご利用額</th>
+<td>
+<%= f.text_field :unit_price %>
+</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>
+<%= f.text_field :phone_number %>
+</td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td>
+<%= f.text_field :email %>
+</td>
+</tr>
+<tr>
+<th>郵便番号</th>
+<td>
+<%= f.text_field :post_code %>
+</td>
+</tr>
+<tr>
+<th>住所</th>
+<td>
+<%= f.text_field :address %>
+</td>
+</tr>
+<tr>
+<th>職業</th>
+<td>
+<%= f.text_field :profession %>
+</td>
+</tr>
+<tr>
+<th>年収</th>
+<td>
+<%= f.text_field :annual_income %>
+</td>
+</tr>
+<tr>
+<th>次回リピート見込み</th>
+<td>
+   <%= f.select :repeat, [["有", "有"], ["なし", "なし"],["不明", "不明"] , ["NG顧客", "NG顧客"]], include_blank: "選択して下さい" %>
+</td>
+</tr>
+<tr>
+<th>結婚の有無</th>
+<td>
+  <%= f.select :marriage, [["既婚", "既婚"], ["未婚", "未婚"], ["歴あり現在独身", "歴あり現在独身"] , ["不明/その他", "不明/その他"]], include_blank: "選択して下さい" %>
+</td>
+</tr>
+<th>子供の有無</th>
+<td>
+   <%= f.select :children, [["有", "有"], ["なし", "なし"], ["不明", "不明"]], include_blank: "選択して下さい" %>
+</td>
+</table>
+
+
+
+ <h1>目標</h1>
+
+<table>
+<tr>
+<th>来店頻度</th>
+<td>
+  <%= f.select :visit_frequency, [["週3以上", "週3以上"], ["週1-2", "週1-2"], ["月3ほど", "月3ほど"] , ["月1以下", "月1以下"], ["3か月に１回", "3か月に１回"] , ["不明/不定期", "不明/不定期"] ], include_blank: "選択して下さい" %>
+</td>
+</tr>
+<tr>
+<th>単価</th>
+<td>
+<%= f.text_field :unit_price %>
+</td>
+</tr>
+<tr>
+<th>1か月の売り上げ目標</th>
+<td>
+<%= f.text_field :month_sales_target %>
+</td>
+</tr>
+<tr>
+<th>最終売上金額目標</th>
+<td>
+<%= f.text_field :gole_sales_target %>
+</td>
+</tr>
+</table>
+
+<%= f.submit '投稿' %>
+
+<% end %>
+</div>
+</div>

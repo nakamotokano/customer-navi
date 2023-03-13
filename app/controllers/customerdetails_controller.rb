@@ -24,6 +24,13 @@ class CustomerdetailsController < ApplicationController
   end
 
   def edit
+    @customerdetail =Customerdetail.find(params[:id])  
+  end
+  
+  def update
+    customerdetail = Customerdetail.find(params[:id])
+    customerdetail.update(customerdetail_params)
+    redirect_to customerdetail_path(customerdetail.id)  
   end
   
     def customerdetail_params
