@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'homes/top'
+  devise_for :staffs
+  root to: 'homes#top'
+  
   get '/top' => 'customerdetails#top'
   get '/' => "customerdetails#index"
   get 'customerdetails/new'
