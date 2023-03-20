@@ -99,12 +99,18 @@
     
     </tbody>
 </table>
-</div>
-</div>
 
-<p>
+<div class="mx-auto">
+<button type="button" class="btn btn-secondary .text-light">
 <%= link_to "編集", edit_customerdetail_path(@customerdetail.id) %>
-</p>
-<p>
+</button>
+<button type="button" class="btn btn-secondary">
 <%= link_to "新規登録", customerdetails_new_path(@customerdetail.id) %>
-</p>
+</button>
+<button type="button" class="btn btn-secondary">
+<%= link_to "一覧に戻る", index_path %>
+</button>
+  </div>
+  
+  </div>
+</div>

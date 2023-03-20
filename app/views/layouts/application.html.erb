@@ -11,20 +11,25 @@
   </head>
 
   <body>
-      <header>
-     <% if staff_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
-      </li>
+    <header>
+    <nav class="navbar navbar-dark bg-dark">
+      <ul class="navbar-nav mr-auto">　
+  <!-- Navbar content -->
+    <% if staff_signed_in? %>
+    <li class="nav-item">
+    <%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
+    </li>
     <% else %>
-      <li>
+    <li class="nav-item">
         <%= link_to "新規登録", new_staff_registration_path %>
-      </li>
-      <li>
+   </li>
+   <li class="nav-item">
         <%= link_to "ログイン", new_staff_session_path %>
-      </li>
+  </li>
     <% end %>
-  </header>
+    </ul>
+ </nav>
+ </header>
     <%= yield %>
   </body>
 </html>

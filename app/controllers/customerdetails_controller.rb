@@ -5,11 +5,15 @@ class CustomerdetailsController < ApplicationController
   
   def create
     # １.2 データを受け取り新規登録するためのインスタンス作成
-    customerdetail = Customerdetail.new(customerdetail_params)
+    @customerdetail = Customerdetail.new(customerdetail_params)
     # 3. データをデータベースに保存するためのsaveメソッド実行
-    customerdetail.save
+    if @customerdetail.save
     # 4. トップ画面へリダイレクト
-    redirect_to customerdetail_path(customerdetail.id)
+    #redirect_to customerdetail_path(customerdetail.id)
+    redirect_to index_path
+    else
+    render :new
+    end
   end
   
   def top
@@ -17,6 +21,7 @@ class CustomerdetailsController < ApplicationController
 
   def index
      @customerdetails =Customerdetail.all
+     @customerdetail = Customerdetail.new
   end
 
   def show

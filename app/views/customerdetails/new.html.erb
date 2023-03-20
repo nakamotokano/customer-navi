@@ -1,5 +1,14 @@
 <div class="container">
 <h1>顧客登録ページ</h1>
+
+<% if @customerdetail.errors.any? %>
+  <%= @customerdetail.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @customerdetail.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+<% end %>
+  </ul>
+<% end %>
 <!-- form_with部分 -->
 <%= form_with model: @customerdetail do |f| %>
 <table>

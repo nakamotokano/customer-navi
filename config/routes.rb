@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
-  get 'homes/top'
+  
+devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
+  sessions: "admins/sessions"
+}
+get 'admins/index'=> 'admins/staffs#index'
+  #get 'admins/edit'
+  #get 'admins/update'
+  
+  
   devise_for :staffs
   root to: 'homes#top'
   
+
+  
+  get 'homes/top'
+
+  
   get '/top' => 'customerdetails#top'
-  get '/' => "customerdetails#index"
+  get '/index' => "customerdetails#index"
   get 'customerdetails/new'
   post 'customerdetails' =>'customerdetails#create'
   get 'customerdetails/:id'=> 'customerdetails#show', as: 'customerdetail'
@@ -12,3 +25,4 @@ Rails.application.routes.draw do
   patch 'customerdetails/:id' => 'customerdetails#update', as: 'update_customerdetail'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
