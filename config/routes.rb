@@ -14,7 +14,9 @@ get 'admins/customerdetails/:id'=> 'admins/customerdetails#show', as: 'admins_cu
   devise_for :staffs
   get 'staffs/:id'=> 'staffs#show', as: 'staff'
   #get 'staffs/show'
-  get 'staffs/edit'
+  get 'staffs/:id/edit'=> 'staffs#edit', as: 'edit_staff'
+  patch 'staffs/:id' => 'staffs#update', as: 'update_staff'
+   #get 'staffs/edit'
   root to: 'homes#top'
   get 'homes/top'
   get '/top' => 'customerdetails#top'

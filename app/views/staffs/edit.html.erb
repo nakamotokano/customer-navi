@@ -1,2 +1,30 @@
-<h1>Staffs#edit</h1>
-<p>Find me in app/views/staffs/edit.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <!-- バリデーション部分 -->
+      <% if @staff.errors.any? %>
+       <%= @staff.errors.count %>件のエラーが発生しました
+      <ul>
+       <% @staff.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+      </ul>
+      <% end %>
+      <!-- 編集部分 -->
+    <h2>スタッフ情報編集</h2>
+    <%= form_with model: @staff, url:update_staff_path(@staff.id), method: :patch do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control name" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_area :email, class: "form-control introduction" %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.submit class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

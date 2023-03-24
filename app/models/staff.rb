@@ -5,5 +5,7 @@ class Staff < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :customerdetails
+  
+  validates :name, presence: true
 
 end

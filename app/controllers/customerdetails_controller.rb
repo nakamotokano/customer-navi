@@ -1,4 +1,5 @@
 class CustomerdetailsController < ApplicationController
+  before_action :authenticate_staff!
 
   def new
     @customerdetail = Customerdetail.new
@@ -42,6 +43,6 @@ class CustomerdetailsController < ApplicationController
   end
 
     def customerdetail_params
-    params.require(:customerdetail).permit(:last_name, :first_name, :nickname, :gender, :post_code, :profession , :address , :annual_income , :repeat , :marriage, :children , :visits, :unit_price , :phone_number , :email , :birthday , :visit_frequency , :month_sales_target , :gole_sales_target)
+    params.require(:customerdetail).permit(:last_name, :first_name, :nickname, :gender, :post_code, :profession , :address , :annual_income , :repeat , :marriage, :children , :visits, :usage_amount ,:unit_price , :phone_number , :email , :birthday , :visit_frequency , :month_sales_target , :gole_sales_target)
     end
 end

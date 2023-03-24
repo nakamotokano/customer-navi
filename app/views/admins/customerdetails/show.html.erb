@@ -30,7 +30,7 @@
     </tr>
       <tr>
       <th scope="row">ご利用額</th>
-      <td><%= @customerdetail.unit_price %></td>
+      <td><%= @customerdetail.usage_amount %></td>
     </tr>
      <tr>
       <th scope="row">電話番号</th>
@@ -59,10 +59,6 @@
   　<tr>
       <th scope="row">リピート見込み</th>
       <td><%= @customerdetail.repeat %></td>
-    </tr>
-    <tr>
-      <th scope="row">住所</th>
-      <td><%= @customerdetail.address %></td>
     </tr>
     <tr>
       <th scope="row">結婚の有無</th>
@@ -110,14 +106,43 @@
 <%= javascript_tag do %>
 let first_name = "<%= @customerdetail.first_name %>"
 let last_name = "<%= @customerdetail.last_name %>"
+let gender = "<%= @customerdetail.gender %>"
+let birthday = "<%=  @customerdetail.birthday %>"
+let visits = "<%=  @customerdetail.visits %>"
+let usage_amount = "<%=  @customerdetail.usage_amount %>"
+let phone_number = "<%=  @customerdetail.phone_number %>"
+let email = "<%=  @customerdetail.email %>"
+let post_code = "<%=  @customerdetail.post_code %>"
 let address = "<%= @customerdetail.address %>"
-let email = "<%= @customerdetail.gender %>"
-
+let profession = "<%=  @customerdetail.profession %>"
+let annual_income = "<%=  @customerdetail.annual_income %>"
+let repeat = "<%=  @customerdetail.repeat %>"
+let marriage = "<%=  @customerdetail.marriage %>"
+let children = "<%=  @customerdetail.children %>"
+let visit_frequency = "<%=  @customerdetail.visit_frequency %>"
+let unit_price = "<%=  @customerdetail.unit_price %>"
+let month_sales_target = "<%=  @customerdetail.month_sales_target %>"
+let gole_sales_target = "<%=  @customerdetail.gole_sales_target %>"
 
 let data = [
-  ["名前"first_name,last_name],
-  [address,"test",email],
-  ["1","2","3"]
+  ["名前" ,first_name,last_name],
+  ["性別",gender],
+  ["誕生日",birthday],
+  ["来店日",visits],
+  ["ご利用額",usage_amount],
+  ["電話番号",phone_number],
+  ["メールアドレス",email],
+  ["郵便番号",post_code],
+  ["住所",address],
+  ["職業",profession],
+  ["年収",annual_income],
+  ["リピート見込み",repeat],
+  ["結婚の有無",marriage],
+  ["子供の有無",children],
+  ["来店頻度",visit_frequency],
+  ["単価",unit_price],
+  ["1か月の売り上げ目標",month_sales_target],
+  ["最終売上金額目標",gole_sales_target]
 ]
 
 const csvData = convertToCSV(data)

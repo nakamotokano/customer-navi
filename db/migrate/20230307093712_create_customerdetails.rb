@@ -8,6 +8,7 @@ t.string :nickname
 t.string :gender
 t.string :post_code
 t.string :profession
+t.string :usage_amount
 t.string :address
 t.string :annual_income
 t.string :repeat
