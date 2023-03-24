@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
 devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admins/sessions"
 }
@@ -7,15 +8,15 @@ get 'admins/index'=> 'admins/staffs#index'
   #get 'admins/edit'
   #get 'admins/update'
   
-  
+get 'admins/customerdetails/index'=> 'admins/customerdetails#index'
+get 'admins/customerdetails/:id'=> 'admins/customerdetails#show', as: 'admins_customerdetail'
+
   devise_for :staffs
+  get 'staffs/:id'=> 'staffs#show', as: 'staff'
+  #get 'staffs/show'
+  get 'staffs/edit'
   root to: 'homes#top'
-  
-
-  
   get 'homes/top'
-
-  
   get '/top' => 'customerdetails#top'
   get '/index' => "customerdetails#index"
   get 'customerdetails/new'

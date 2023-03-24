@@ -1,7 +1,7 @@
 <div class="container my-5">
   <div class="row no-gutters">
 
-<h1>スタッフ一覧</h1>
+<h1>顧客一覧</h1>
 
 
 <table class="table table-bordered">
@@ -15,9 +15,9 @@
   <tbody>
     <% @customerdetails.each do |customerdetail| %>
     <tr>
-      <td> <%= link_to customerdetail.last_name , customerdetail_path(customerdetail.id) %><%= customerdetail.first_name %></td>
+      <td> <%= link_to customerdetail.last_name , admins_customerdetail_path(customerdetail.id) %><%= customerdetail.first_name %></td>
       <td><%= customerdetail.visits %></td>
-      <td><%#= @staff.name %></td>
+      <td><%= customerdetail.staff.name %></td>
     </tr>
   </tbody>
   <% end %>

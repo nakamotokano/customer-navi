@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2023_03_15_102043) do
 
   create_table "admins", force: :cascade do |t|
+    t.integer "staff_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 2023_03_15_102043) do
   end
 
   create_table "customerdetails", force: :cascade do |t|
+    t.integer "staff_id", null: false
     t.string "last_name"
     t.string "first_name"
     t.string "nickname"

@@ -13,12 +13,19 @@
   <body>
     <header>
     <nav class="navbar navbar-dark bg-dark">
-      <ul class="navbar-nav mr-auto">　
+      <ul class="navbar-nav mr-auto">
   <!-- Navbar content -->
     <% if staff_signed_in? %>
     <li class="nav-item">
     <%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
     </li>
+    <li class="nav-item">
+    <%= link_to "マイページ", staff_path(current_staff.id) %>
+    </li>
+    <% elsif admin_signed_in?%>
+    <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+    </li>
+    
     <% else %>
     <li class="nav-item">
         <%= link_to "新規登録", new_staff_registration_path %>
