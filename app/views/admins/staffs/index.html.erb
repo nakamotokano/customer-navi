@@ -1,30 +1,28 @@
 <div class="container my-5">
   <div class="row no-gutters">
-
-<h1>スタッフ一覧</h1>
-
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>お客様名</th>
-      <th>来店日</th>
-      <th>担当者</th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @customerdetails.each do |customerdetail| %>
-    <tr>
-      <td> <%= link_to customerdetail.last_name , customerdetail_path(customerdetail.id) %><%= customerdetail.first_name %></td>
-      <td><%= customerdetail.visits %></td>
-      <td><%#= @staff.name %></td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-
-<button type="button" class="btn btn-lg btn-secondary ">
-<%= link_to "CSV作成", customerdetails_new_path(@customerdetail.id) %>
-</button>
-<div>
+    <div class="col-xs-10 col-xs-offset-1">
+      <h2>会員一覧</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @staffs.each do |staff| %>
+            <tr>
+              <td><%= staff.id %></td>
+              <td class="text-dark">
+                <%= staff.name %>
+              </td>
+              <td><%= staff.email %></td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+      <%= link_to "一覧に戻る", admins_customerdetails_index_path ,class: 'btn btn-secondary'%>
+    </div>
+  </div>
 </div>

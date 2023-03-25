@@ -1,16 +1,7 @@
 class Admins::StaffsController < ApplicationController
+  before_action :authenticate_admin!
   def index
-       @customerdetails =Customerdetail.all
-       @customerdetail = Customerdetail.new
-  end
-  
-  def show
-  end
-
-  def edit
-  end
-
-
-  def update
+       @staffs =Staff.all
+       @staff = Staff.new
   end
 end
