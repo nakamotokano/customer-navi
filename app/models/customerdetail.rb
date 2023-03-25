@@ -1,5 +1,6 @@
 class Customerdetail < ApplicationRecord
   belongs_to :staff
+  belongs_to :admin, optional: true
   
   validates :last_name, presence: true
   validates :first_name, presence: true

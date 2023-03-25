@@ -2,14 +2,16 @@
     <div class="row">
 
 <h2><%= @customerdetail.first_name %><%= @customerdetail.last_name %>様の詳細ページ</h2>
+
 <% if @customerdetail.errors.any? %>
   <%= @customerdetail.errors.count %>件のエラーが発生しました
-  <ul>
+   <ul>
     <% @customerdetail.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+    <li><%= message %></li>
     <% end %>
-  </ul>
+   </ul>
 <% end %>
+
 <table class="table table-bordered">
   <tbody>
     <tr>
@@ -79,7 +81,7 @@
       <th scope="row">来店頻度</th>
       <td><%= @customerdetail.visit_frequency %></td>
     </tr>
-        <tr>
+    <tr>
       <th scope="row">単価</th>
       <td><%= @customerdetail.unit_price %></td>
     </tr>
@@ -91,20 +93,18 @@
       <th scope="row">最終売上金額目標</th>
       <td><%= @customerdetail.gole_sales_target %></td>
     </tr>
-
-    </tbody>
+  </tbody>
 </table>
 
 <div class="mx-auto">
   <button type="button" onclick="download();">CSVダウンロード</button>
-<button type="button" class="btn btn-secondary">
-<%= link_to "一覧に戻る", admins_customerdetails_index_path ,class: 'btn btn-secondary'%>
-   </div>%>
-</button>
-  </div>
-
-  </div>
+  <button type="button" class="btn btn-secondary">
+    <%= link_to "一覧に戻る", admins_customerdetails_index_path ,class: 'btn btn-secondary'%>
+</div>%>
+  </button>
 </div>
+ </div>
+  </div>
 <%= javascript_tag do %>
 let first_name = "<%= @customerdetail.first_name %>"
 let last_name = "<%= @customerdetail.last_name %>"

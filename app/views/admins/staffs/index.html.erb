@@ -15,7 +15,7 @@
             <tr>
               <td><%= staff.id %></td>
               <td class="text-dark">
-                <%= staff.name %>
+                <%= link_to staff.name , admins_staff_path(staff.id) %>
               </td>
               <td><%= staff.email %></td>
             </tr>

@@ -20,9 +20,6 @@ class CustomerdetailsController < ApplicationController
     end
   end
 
-  def top
-  end
-
   def index
      @customerdetails =current_staff.customerdetails.all
      @customerdetail = Customerdetail.new
@@ -37,9 +34,7 @@ class CustomerdetailsController < ApplicationController
   end
 
   def update
-     # １.2 データを受け取り新規登録するためのインスタンス作成
      @customerdetail = Customerdetail.find(params[:id])
-     
     if @customerdetail.update(customerdetail_params)
        redirect_to customerdetail_path(@customerdetail.id)
     else

@@ -5,6 +5,7 @@ devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admins/sessions"
 }
 get 'admins/index'=> 'admins/staffs#index'
+get 'admins/staffs/:id'=> 'admins/staffs#show', as: 'admins_staff'
   #get 'admins/edit'
   #get 'admins/update'
   

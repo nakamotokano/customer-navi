@@ -4,4 +4,8 @@ class Admins::StaffsController < ApplicationController
        @staffs =Staff.all
        @staff = Staff.new
   end
+  def show
+       @staff =Staff.find(params[:id])
+       @staffs=Staff.all
+  end
 end

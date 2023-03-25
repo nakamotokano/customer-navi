@@ -1,0 +1,28 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+   <div class="col-md-8 offset-md-1">
+  
+<h2>スタッフ別投稿</h2>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>お客様名</th>
+      <th>来店日</th>
+    </tr>
+  </thead>
+    <tbody>
+        <% @staff.customerdetails.each do|customerdetail| %>
+        <tr>
+          <td>
+          <%= customerdetail.last_name %><%= customerdetail.first_name %>
+          </td>
+        　<td>
+          <%= customerdetail.visits %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+    <%= link_to "一覧に戻る", admins_customerdetails_index_path ,class: 'btn btn-secondary'%>
+    </div>
+  </div>
+</div>
