@@ -96,8 +96,10 @@
 </table>
 
 <div class="mx-auto">
+  <button type="button" onclick="download();">CSVダウンロード</button>
 <button type="button" class="btn btn-secondary">
-<%= link_to "一覧に戻る", admins_customerdetails_index_path %>
+<%= link_to "一覧に戻る", admins_customerdetails_index_path ,class: 'btn btn-secondary'%>
+   </div>%>
 </button>
   </div>
 
@@ -147,7 +149,9 @@ let data = [
 
 const csvData = convertToCSV(data)
 const filename = "output.csv"
-downloadCSV(csvData,filename)
+function download() {
+  downloadCSV(csvData,filename)
+}
 
 function convertToCSV(data) {
   const csv = data.map((row) => row.map((cell) => `"${cell.toString().replace(/"/g, '""')}"`).join(",")).join("\r\n");

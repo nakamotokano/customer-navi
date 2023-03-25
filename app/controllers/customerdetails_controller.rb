@@ -37,9 +37,14 @@ class CustomerdetailsController < ApplicationController
   end
 
   def update
-    customerdetail = Customerdetail.find(params[:id])
-    customerdetail.update(customerdetail_params)
-    redirect_to customerdetail_path(customerdetail.id)
+     # １.2 データを受け取り新規登録するためのインスタンス作成
+     @customerdetail = Customerdetail.find(params[:id])
+     
+    if @customerdetail.update(customerdetail_params)
+       redirect_to customerdetail_path(@customerdetail.id)
+    else
+    render :edit
+    end   
   end
 
     def customerdetail_params

@@ -12,13 +12,6 @@ class Admins::CustomerdetailsController < ApplicationController
     @customerdetail =Customerdetail.find(params[:id])
   end
 
-  def edit
-  end
-
-
-  def update
-  end
-  
   #def csv_output
   #@customerdetails =Customerdetail.all
   #csv_data = CSV.generate do |csv|

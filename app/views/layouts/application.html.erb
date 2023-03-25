@@ -11,31 +11,45 @@
   </head>
 
   <body>
-    <header>
-    <nav class="navbar navbar-dark bg-dark">
-      <ul class="navbar-nav mr-auto">
-  <!-- Navbar content -->
-    <% if staff_signed_in? %>
-    <li class="nav-item">
-    <%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
-    </li>
-    <li class="nav-item">
-    <%= link_to "マイページ", staff_path(current_staff.id) %>
-    </li>
-    <% elsif admin_signed_in?%>
-    <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-    </li>
-    
-    <% else %>
-    <li class="nav-item">
-        <%= link_to "新規登録", new_staff_registration_path %>
-   </li>
-   <li class="nav-item">
-        <%= link_to "ログイン", new_staff_session_path %>
-  </li>
-    <% end %>
-    </ul>
- </nav>
+ <header class="shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <h3><a class="navbar-brand p-3" href="/">顧客ナビ</a></h3>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav  ml-auto">
+            <% if staff_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_staff_session_path, method: :delete , class: 'btn btn-outline-dark'%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "顧客一覧", index_path, class: 'btn btn-outline-dark'%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "マイページ", staff_path(current_staff.id) , class: 'btn btn-outline-dark'%>
+              </li>
+            <% elsif admin_signed_in?%>
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete , class: 'btn btn-outline-dark'%>
+              </li>
+            <% else %>
+              <% unless request.fullpath.include?("admins/") %>
+              <li class="nav-item">
+                 <%= link_to "新規登録", new_staff_registration_path, class: 'btn btn-outline-dark' %>
+              </li>
+              <li class="nav-item">
+               <%= link_to "ログイン", new_staff_session_path , class: 'btn btn-outline-dark' %>
+              </li>
+              <% end %>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
  </header>
     <%= yield %>
   </body>
